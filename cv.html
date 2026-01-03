@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Julia Andrews Mendel</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            background-color: #fcfcfc;
+            color: #000000;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        h1 {
+            font-weight: 300;
+            letter-spacing: 0.45em;
+            font-size: 2em;
+            margin-bottom: 2em;
+        }
+
+        .cv-section {
+            margin-bottom: 3em;
+            line-height: 1.6;
+        }
+
+        .cv-section h2 {
+            font-weight: 300;
+            letter-spacing: 0.2em;
+            font-size: 1.2em;
+            margin-bottom: 1em;
+        }
+
+        .cv-item {
+            margin-bottom: 1.5em;
+            line-height: 1.6;
+        }
+
+        .references {
+            margin-top: 3em;
+            text-align: center;
+            font-style: italic;
+            color: #666;
+        }
+
+        .menu-button {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            width: 40px;
+            height: 40px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            z-index: 1000;
+        }
+
+        .menu-dots {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .menu-dots::before,
+        .menu-dots::after,
+        .menu-dots span {
+            content: '';
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: #000;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .menu-dots::before {
+            top: 6px;
+            left: calc(50% - 10px);
+        }
+
+        .menu-dots span {
+            top: 6px;
+            left: calc(50% + 4px);
+        }
+
+        .menu-dots::after {
+            top: 19px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .menu-container {
+            position: fixed;
+            bottom: 70px;
+            left: 20px;
+            background: rgba(252, 252, 252, 0.95);
+            padding: 10px;
+            border-radius: 5px;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .menu-button:hover + .menu-container,
+        .menu-container:hover {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .menu-container a {
+            display: block;
+            padding: 8px 20px;
+            color: #000;
+            text-decoration: none;
+            font-size: 1.1em;
+            letter-spacing: 0.1em;
+            transition: all 0.2s ease;
+        }
+
+        .menu-container a:hover {
+            transform: translateX(5px);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>CV</h1>
+        
+        <div class="cv-section">
+            <h2>Education and professional development</h2>
+            <div class="cv-item">
+                Centre for the Less Good Idea, Johannesburg & Next Wave, Melbourne | Australia Council for the Arts secondment fund, 2019
+            </div>
+            <div class="cv-item">
+                Future Leaders Program | Australia Council for the Arts, 2018
+            </div>
+            <div class="cv-item">
+                Diploma of Screen and Media: Multiplatform Production | Metro Screen, 2014
+            </div>
+            <div class="cv-item">
+                Bachelor of Arts (Art History and Curatorship) (Honours) | The Australian National University, 2011
+            </div>
+            <div class="cv-item">
+                Bachelor of Arts (Art History and Curatorship) | The Australian National University, 2010
+            </div>
+        </div>
+
+        <div class="cv-section">
+            <h2>Experience</h2>
+            <div class="cv-item">
+                Digital Learning Manager | National Gallery of Australia, Canberra, 2021 – present
+            </div>
+            <div class="cv-item">
+                Assistant Director, Digital Community | National Library of Australia, Canberra, 2020 – 2021
+            </div>
+            <div class="cv-item">
+                Public Engagement and Events Officer | UNSW Galleries, Sydney, 2019 – 2020
+            </div>
+            <div class="cv-item">
+                Chairperson, Board of Directors | Firstdraft, Sydney, 2019 – 2020
+            </div>
+            <div class="cv-item">
+                Public Programs Producer | Art Gallery of NSW, Sydney, 2018 – 2019
+            </div>
+            <div class="cv-item">
+                Producer, Community Engagement | Information and Cultural Exchange, Parramatta, 2015 – 2018
+            </div>
+            <div class="cv-item">
+                Co-Director | Critical Animals Creative Research Symposium, This is Not Art, 2014 – 2017
+            </div>
+            <div class="cv-item">
+                Festival Coordinator | Flickerfest International Short Film Festival, Sydney, 2014 – 2015
+            </div>
+            <div class="cv-item">
+                Curator | Off the Record Productions, Sydney, 2013 – 2015
+            </div>
+            <div class="cv-item">
+                Creative Producer | 14 Black Poppies, San Francisco, 2012 – 2013
+            </div>
+            <div class="cv-item">
+                Gallery Assistant | Showcase Gallery, Sydney, 2011 – 2012
+            </div>
+            <div class="cv-item">
+                Gallery Assistant | HEDAH Contemporary Art Centre, Maastricht, 2009 – 2010
+            </div>
+        </div>
+
+        <div class="cv-section">
+            <h2>Writing / Speaking / Exhibitions</h2>
+            <div class="cv-item">
+                Speaking up: Reflecting on the National Gallery of Australia's pilot program supporting young critical voices, panellist, Australian Museums and Galleries Association National Conference, 2023
+            </div>
+            <div class="cv-item">
+                Women in Music Advisory Committee, member, MusicNSW, 2018
+            </div>
+            <div class="cv-item">
+                All Girl Electronic, paper, STEAM Library Conference, State Library of New South Wales, 2017
+            </div>
+            <div class="cv-item">
+                Digital saturation and staring down the impending wave, Safari Explorer Writers Program, 2016
+            </div>
+            <div class="cv-item">
+                Madness of Many, catalogue essay, Critical Animals Creative Research Symposium, 2016
+            </div>
+            <div class="cv-item">
+                Be. Poietic.Punks: What if your rebel heart ran free?, Yoke Magazine, 2015
+            </div>
+            <div class="cv-item">
+                The Grey Beast, installation and workshop, Critical Animals Creative Research Symposium, This is Not Art, The Lock Up, Newcastle, 2014
+            </div>
+            <div class="cv-item">
+                The Grey Beast, installation, Australian Design Centre, 2014
+            </div>
+            <div class="cv-item">
+                TURF, curation, Gladstone Park, Balmain and the Surry Hills Library Forecourt, 2013
+            </div>
+            <div class="cv-item">
+                Give + Take, catalogue essay, San Francisco, 2013
+            </div>
+            <div class="cv-item">
+                Give + Take, group exhibition, San Francisco, 2013
+            </div>
+            <div class="cv-item">
+                Latenite Bubbles with Bernadette, contributing writer, Mutiny Radio, San Francisco, 2013
+            </div>
+            <div class="cv-item">
+                San Francisco Writers Grotto Showcase, contributing writer, Book Passage, San Francisco, 2013
+            </div>
+            <div class="cv-item">
+                Christopher X Bost, essay, 14 Black Poppies, San Francisco, 2013
+            </div>
+            <div class="cv-item">
+                Crear, essay, 14 Black Poppies, San Francisco, 2013
+            </div>
+            <div class="cv-item">
+                Grace Cooper and Luciano Talpini Aita, essay, 14 Black Poppies, San Francisco, 2013
+            </div>
+            <div class="cv-item">
+                Philip McGaughy, essay, 14 Black Poppies, San Francisco, 2013
+            </div>
+        </div>
+
+    </div>
+
+    <button class="menu-button">
+        <div class="menu-dots">
+            <span></span>
+        </div>
+    </button>
+    <nav class="menu-container">
+        <a href="index.html">Home</a>
+        <a href="cv.html">CV</a>
+        <a href="images.html">Images</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</body>
+</html> 
