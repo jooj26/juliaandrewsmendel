@@ -1,0 +1,23 @@
+backend:
+  name: github
+  repo: sssdddggg/juliaandrewsmendel
+  branch: main
+
+media_folder: "images"
+public_folder: "/images"
+
+collections:
+  - name: "pages"
+    label: "Pages"
+    files:
+      - label: "CV"
+        name: "cv"
+        file: "cv.html"
+        fields:
+          - { label: "Body", name: "body", widget: "code", default_language: "html" }
+
+      - label: "Contact"
+        name: "contact"
+        file: "contact.html"
+        fields:
+          - { label: "Body", name: "body", widget: "code", default_language: "html" }
