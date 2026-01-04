@@ -119,11 +119,11 @@ If Julia primarily needs to update images, a simpler approach:
 
 ## Next Steps
 
-1. [ ] Create GitHub repository
-2. [ ] Push existing code
-3. [ ] Create admin/ folder with config
-4. [ ] Set up GitHub OAuth App
-5. [ ] Deploy OAuth proxy or use Netlify Identity
+1. [x] Create GitHub repository
+2. [x] Push existing code
+3. [x] Create admin/ folder with config
+4. [ ] Set up GitHub OAuth App (or use Netlify Identity)
+5. [ ] Deploy to Netlify or set up OAuth proxy for self-hosting
 6. [ ] Test the admin interface
 7. [ ] Train Julia on using the CMS
 
