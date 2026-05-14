@@ -10,13 +10,17 @@
     <style>
         * { box-sizing: border-box; }
 
+        html, body {
+            height: 100%;
+        }
+
         body {
             font-family: 'Cormorant Garamond', Georgia, serif;
             margin: 0;
             padding: 0;
             background-color: #d4d8dc;
             color: #000000;
-            overflow-x: hidden;
+            overflow: hidden;
         }
 
         h1 {
@@ -34,7 +38,7 @@
 
         .scroll-wrapper {
             position: relative;
-            /* height set by JS */
+            height: 100vh;
         }
 
         .sticky-container {
@@ -377,45 +381,45 @@
     </nav>
 
     <script>
-        const wrapper = document.getElementById('scrollWrapper');
         const track = document.getElementById('galleryTrack');
-
-        function init() {
-            const scrollable = track.scrollWidth - window.innerWidth;
-            wrapper.style.height = `${window.innerHeight + scrollable}px`;
-        }
-
-        function update() {
-            const rect = wrapper.getBoundingClientRect();
-            const scrollable = track.scrollWidth - window.innerWidth;
-            const progress = Math.max(0, Math.min(1, -rect.top / scrollable));
-            track.style.transform = `translateX(${-progress * scrollable}px)`;
-        }
-
-        window.addEventListener('scroll', update, { passive: true });
-        window.addEventListener('resize', () => { init(); update(); }, { passive: true });
-
-        // Wait for images to load before setting height
-        window.addEventListener('load', () => { init(); update(); });
-        init();
-        update();
-
-        // Modal
         const modal = document.getElementById('imageModal');
         const modalImg = document.querySelector('.modal-image');
+
+        let scrollX = 0;
+
+        function getMaxScroll() {
+            return Math.max(0, track.scrollWidth - window.innerWidth);
+        }
+
+        function applyScroll(delta) {
+            scrollX = Math.max(0, Math.min(getMaxScroll(), scrollX + delta));
+            track.style.transform = `translateX(${-scrollX}px)`;
+        }
+
+        // Intercept wheel events so vertical trackpad scroll drives the gallery
+        // horizontally instead of jerkily nudging the page.
+        document.addEventListener('wheel', (e) => {
+            if (modal.style.display === 'block') return;
+            e.preventDefault();
+            const delta = Math.abs(e.deltaX) > Math.abs(e.deltaY) ? e.deltaX : e.deltaY;
+            applyScroll(delta);
+        }, { passive: false });
+
+        window.addEventListener('resize', () => {
+            scrollX = Math.min(scrollX, getMaxScroll());
+            track.style.transform = `translateX(${-scrollX}px)`;
+        }, { passive: true });
 
         document.querySelectorAll('.gallery-item img').forEach(img => {
             img.addEventListener('click', () => {
                 modal.style.display = 'block';
                 modalImg.src = img.dataset.full;
                 modalImg.alt = img.alt;
-                document.body.style.overflow = 'hidden';
             });
         });
 
         function closeModal() {
             modal.style.display = 'none';
-            document.body.style.overflow = 'auto';
         }
 
         modal.addEventListener('click', (e) => {
